@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08080d">
+  <meta name="description" content="Discover trending public videos, viral entertainment, online culture and the latest updates.">
+
+  <title>MMS & Viral Videos | Join Telegram</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1644633903769766');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1644633903769766&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  <style>
+    :root {
+      --bg: #08080d;
+      --panel: #12121b;
+      --red: #ff2638;
+      --blue: #20baff;
+      --yellow: #ffe438;
+      --white: #fff;
+      --muted: #aaaab8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(ellipse at 10% 15%, #3c101a 0, transparent 36%),
+        radial-gradient(ellipse at 90% 45%, #09263a 0, transparent 35%),
+        var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(100% - 32px, 760px);
+      margin: auto;
+      padding: 20px 0 35px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .brand span {
+      color: var(--red);
+    }
+
+    .live {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid #34343f;
+      border-radius: 30px;
+      padding: 8px 12px;
+      color: #e6e6ee;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #31e99a;
+      box-shadow: 0 0 10px #31e99a;
+    }
+
+    .hero {
+      position: relative;
+      padding: 35px 22px 30px;
+      overflow: hidden;
+      border: 1px solid #30303c;
+      border-radius: 24px;
+      background: linear-gradient(145deg, #181820, #0d0d14 70%);
+      box-shadow: 0 20px 65px #0008;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -130px;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      transform: translateX(-50%);
+      background: #ff263826;
+      filter: blur(65px);
+      pointer-events: none;
+    }
+
+    .tag {
+      position: relative;
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid #ff26385c;
+      border-radius: 6px;
+      background: #ff263817;
+      color: #ff8790;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      position: relative;
+      margin: 24px 0 14px;
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(39px, 9vw, 70px);
+      font-weight: 700;
+      line-height: 1.04;
+      text-transform: uppercase;
+    }
+
+    h1 .red {
+      display: block;
+      color: var(--red);
+      text-shadow: 0 0 30px #ff26382a;
+    }
+
+    h1 .blue {
+      display: block;
+      color: var(--blue);
+      text-shadow: 0 0 25px #20baff35;
+    }
+
+    .subtitle {
+      position: relative;
+      max-width: 450px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .telegram-icon {
+      position: relative;
+      display: grid;
+      width: 76px;
+      height: 76px;
+      margin: 25px auto 0;
+      place-items: center;
+      border: 2px solid #72d8ff;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #38caff, #0874db);
+      box-shadow: 0 0 30px #20baff48;
+      font-size: 37px;
+    }
+
+    .join-button {
+      position: relative;
+      display: flex;
+      width: 100%;
+      min-height: 64px;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 25px;
+      padding: 16px 18px;
+      border: 1px solid #76deff;
+      border-radius: 13px;
+      background: linear-gradient(100deg, #0879e8, #19bafa);
+      box-shadow: 0 0 28px #20baff30;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: .4px;
+      transition: transform .2s, box-shadow .2s;
+      animation: glow 2.5s infinite;
+    }
+
+    .join-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 38px #20baff65;
+    }
+
+    .join-button:active {
+      transform: scale(.98);
+    }
+
+    .telegram-small {
+      font-size: 25px;
+    }
+
+    .trust-note {
+      margin-top: 13px;
+      color: #aaaab8;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .feature {
+      padding: 19px 9px;
+      border: 1px solid #292934;
+      border-radius: 13px;
+      background: #12121bd9;
+      text-align: center;
+      transition: transform .25s, border-color .25s;
+    }
+
+    .feature:hover {
+      transform: translateY(-4px);
+      border-color: #20baff70;
+    }
+
+    .feature-icon {
+      margin-bottom: 10px;
+      font-size: 25px;
+    }
+
+    .feature h2 {
+      margin-bottom: 7px;
+      font-size: 12px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .notice {
+      margin-top: 20px;
+      padding: 17px;
+      border-left: 3px solid var(--yellow);
+      border-radius: 6px;
+      background: #ffffff08;
+      color: #bcbcc8;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .notice strong {
+      color: var(--yellow);
+    }
+
+    footer {
+      padding: 28px 5px 0;
+      color: #777785;
+      font-size: 11px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 15px #20baff20;
+      }
+
+      50% {
+        box-shadow: 0 0 30px #20baff50;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page {
+        width: min(100% - 20px, 760px);
+        padding-top: 14px;
+      }
+
+      .hero {
+        padding: 28px 15px 20px;
+        border-radius: 18px;
+      }
+
+      .brand {
+        font-size: 17px;
+      }
+
+      .live {
+        gap: 5px;
+        padding: 8px;
+        font-size: 9px;
+        letter-spacing: .5px;
+      }
+
+      .features {
+        gap: 7px;
+      }
+
+      .feature {
+        padding: 15px 5px;
+      }
+
+      .feature h2 {
+        font-size: 11px;
+      }
+
+      .join-button {
+        font-size: 14px;
+        gap: 8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Home">
+        MMS &amp;<span> VIRAL VIDEOS</span>
+      </a>
+
+      <div class="live">
+        <span class="live-dot"></span>
+        TRENDING NOW
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="tag">MMS & Viral Videos • Trending Now</div>
+
+      <h1>
+        <span class="red">MMS &</span>
+        <span class="blue">Viral Videos</span>
+        Updates
+      </h1>
+
+      <p class="subtitle">
+        Discover trending public videos, viral entertainment clips,
+        internet moments and the latest online updates in one place.
+      </p>
+
+      <div class="telegram-icon" aria-hidden="true">➤</div>
+
+      <a
+        class="join-button"
+        id="joinButton"
+        href="https://t.me/+e33QBZAp2wlmNDc1"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Join our Telegram channel"
+      >
+        <span class="telegram-small" aria-hidden="true">➤</span>
+        JOIN FOR VIRAL VIDEOS
+        <span aria-hidden="true">→</span>
+      </a>
+
+      <p class="trust-note">
+        Tap above to visit our Telegram channel.
+        Review the channel before joining.
+      </p>
+    </section>
+
+    <section class="features" aria-label="Channel features">
+
+      <article class="feature">
+        <div class="feature-icon" aria-hidden="true">🔥</div>
+        <h2>Viral Videos</h2>
+        <p>Discover popular public clips and internet moments.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon" aria-hidden="true">🎬</div>
+        <h2>MMS Updates</h2>
+        <p>Explore relevant public news and entertainment updates.</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon" aria-hidden="true">📲</div>
+        <h2>Telegram Access</h2>
+        <p>Visit the channel directly from this page.</p>
+      </article>
+
+    </section>
+
+    <aside class="notice">
+      <strong>Respect privacy and consent.</strong>
+      Only share videos and images that you have permission
+      to publish. Private or leaked intimate media, non-consensual
+      recordings, and sexual content involving minors are not permitted.
+    </aside>
+
+    <footer>
+      <p>
+        © <span id="year"></span> MMS &amp; Viral Videos
+      </p>
+      <p>
+        Public entertainment content. Share responsibly.
+      </p>
+    </footer>
+
+  </main>
+
+  <script>
+    (() => {
+      "use strict";
+
+      // Keep the footer year current.
+      const yearElement = document.getElementById("year");
+      if (yearElement) {
+        yearElement.textContent = String(new Date().getFullYear());
+      }
+
+      const joinButton = document.getElementById("joinButton");
+      if (!joinButton) {
+        console.warn("Telegram tracking: #joinButton was not found.");
+        return;
+      }
+
+      /**
+       * Track the Telegram button click in analytics tools that are already
+       * installed on this page. This does not install/configure a Pixel or GA4.
+       */
+      joinButton.addEventListener("click", () => {
+        const eventData = {
+          event_category: "engagement",
+          event_label: "Telegram channel join button",
+          button_id: joinButton.id,
+          destination: joinButton.href,
+          page_location: window.location.href
+        };
+
+        // Google Tag Manager dataLayer (if installed).
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "telegram_join_click",
+          ...eventData
+        });
+
+        // Google Analytics 4 (if gtag and a GA4 property are configured).
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "telegram_join_click", eventData);
+        }
+
+        // Meta Pixel (if the Pixel base code is already installed).
+        if (typeof window.fbq === "function") {
+          window.fbq("trackCustom", "TelegramJoinClick", {
+            button_id: joinButton.id,
+            destination: joinButton.href
+          });
+        }
+
+        // Local diagnostic counter for testing on this browser only.
+        // This is not a server-side report or a substitute for analytics.
+        try {
+          const key = "telegram_join_click_count";
+          const currentCount = Number.parseInt(
+            window.localStorage.getItem(key) || "0", 10
+          );
+          window.localStorage.setItem(key, String(currentCount + 1));
+        } catch (error) {
+          // Tracking must never prevent the Telegram link from opening.
+        }
+
+        console.info("Telegram join button clicked", eventData);
+      });
+    })();
+  </script>
+</body>
+</html>
